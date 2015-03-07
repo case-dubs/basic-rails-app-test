@@ -40,7 +40,7 @@ Rails.application.configure do
   # config.action_view.raise_on_missing_translations = true
 
   #paperclip image file path config 
-  Paperclip.options[:command_path] = "/usr/local/bin/"
+  Paperclip.options[:command_path] = "/usr/local/bin/convert"
   #devise - Ensure you have defined default url options in your environments files. Here
   #is an example of default_url_options appropriate for a development environment
   #in config/environments/development.rb:

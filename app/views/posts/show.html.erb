@@ -1,0 +1,42 @@
+<div class="header-clearing">
+			<div id='header-image'>
+				<img src="images/header-image.jpg">
+				<p><i><%= @post.image_caption%></i></p>
+			</div>
+			<div class="body-container">
+				<h1><%= @post.title %></h1>
+				<div id="author-section">
+					<img src="images/casey-img.jpg">
+					<p>
+						By: Casey Wilson
+					</p>
+				</div>
+				<h3><%= @post.intro_section.try(:html_safe) %></h3>
+				<%= @post.body.try(:html_safe) %>
+			</div>
+
+			<% if(@next_post == nil)%>
+			<% else %>
+				<div id="next-post">
+					<div class="body-container">
+						<h4>WANT TO CHECK OUT MY NEXT BLOG POST?</h4>
+						<div class="post-item">
+							<%= link_to post_path(@next_post) do %>
+								<h3><%= @next_post.title %></h3>
+							<% end %>
+							<div class="left-section">
+								<p><%= @next_post.try(:html_safe) %></p>
+								<div class="blog-details">
+									<img src="images/life-learning.jpeg">
+									<p>Category: Life Learning. By: Casey Wilson.
+									<br><%= @next_post.created_at %></p>
+								</div>
+							</div>
+							<div class="right-section">
+								<img src="images/angularjs.jpg">
+							</div>
+						</div>
+					</div>		
+				</div>
+			<% end %>
+		</div>

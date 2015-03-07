@@ -1,0 +1,23 @@
+<%= form_for @post, :html => { :multipart => true } do |f| %>
+	<div>
+		<%= f.label :title %>
+		<%= f.text_field :title %>
+	</div>
+	<div>
+		<%= f.label :image %>
+		<%= f.file_field :image %>
+	</div>
+	<div>
+		<%= f.label :image_caption %>
+		<%= f.text_field :image_caption %>
+	</div>
+	<div>
+		<%= f.label :intro_section %>
+		<%= f.text_area :intro_section %>
+	</div>
+	<div>
+		<%= f.label :body %>
+		<%= f.text_area :body %>
+	</div>
+	<div><%= f.submit%></div>
+<% end %>
